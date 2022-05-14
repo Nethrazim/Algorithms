@@ -9,7 +9,8 @@ namespace Algorithms.Sorting
 {
     public class BubbleSort
     {
-        public int[] array = new int[] { 4, 3, 2, 1 };
+        public int[] array = new int[] { 5, 4, 3, 2, 1 };
+        //|4,3,2,1|
         //|3,4,2,1|
         //|3,2,4,1|
         //|3,2,1,4| - First foreach (3 - iterations
@@ -70,6 +71,27 @@ namespace Algorithms.Sorting
             {
                 Console.Write(i + " ");
             }
+            Console.WriteLine();
+
+            cloned_array = (int[])array.Clone();
+
+            //optimized version
+            for (int i = 0; i < cloned_array.Length; i++)
+            {
+                for (int j = 0; j < cloned_array.Length - 1 - i; j++)
+                {
+                    if(cloned_array[j] > cloned_array[j +1])
+                    {
+                        int aux = cloned_array[j];
+                        cloned_array[j] = cloned_array[j + 1];
+                        cloned_array[j + 1] = aux;
+                    }
+                }
+            }
+
+            Console.Write("Bubble Sorted but optmized = ");
+            foreach (int i in cloned_array) Console.Write(i + " ");
+            
         }
     }
 }
