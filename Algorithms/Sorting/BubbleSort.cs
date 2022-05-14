@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 // O(n2)
 namespace Algorithms.Sorting
 {
-    public class BubbleSort
+    public class BubbleSort : BaseSort
     {
-        public int[] array = new int[] { 5, 4, 3, 2, 1 };
         //|4,3,2,1|
         //|3,4,2,1|
         //|3,2,4,1|
@@ -19,10 +18,7 @@ namespace Algorithms.Sorting
         //|1,2,3,4| - Third foreach( 1 - iteration)
         public void Run()
         {
-            Console.Write("Unsorted array = ");
-            foreach (int i in array) Console.Write(i + " ");
-            Console.WriteLine();
-
+            base.Run();
 
             int[] cloned_array = (int[])array.Clone();
 

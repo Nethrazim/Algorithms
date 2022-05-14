@@ -9,10 +9,12 @@ namespace Algorithms
 {
     internal class Program
     {
-        static BubbleSort bubbleSort = new BubbleSort();
+        static BubbleSort BubbleSort = new BubbleSort();
+        static SelectionSort SelectionSort = new SelectionSort();   
         static void Main(string[] args)
         {
-            bubbleSort.Run();
+            //BubbleSort.Run();
+            SelectionSort.Run();
 
             Console.ReadKey();
         }
