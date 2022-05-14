@@ -11,10 +11,14 @@ namespace Algorithms
     {
         static BubbleSort BubbleSort = new BubbleSort();
         static SelectionSort SelectionSort = new SelectionSort();   
+        static InsertionSort InsertionSort = new InsertionSort();
         static void Main(string[] args)
         {
             //BubbleSort.Run();
-            SelectionSort.Run();
+            //SelectionSort.Run();
+            InsertionSort.Run();
+
+
 
             Console.ReadKey();
         }

@@ -9,6 +9,7 @@ namespace Algorithms.Sorting
 {
     public class BubbleSort : BaseSort
     {
+        public BubbleSort() : base("Bubble Sort") { }
         //|4,3,2,1|
         //|3,4,2,1|
         //|3,2,4,1|

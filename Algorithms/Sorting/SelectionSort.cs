@@ -9,6 +9,7 @@ namespace Algorithms.Sorting
     // O(n2)
     public class SelectionSort : BaseSort
     {
+        public SelectionSort() : base("Selection Sort") { }
         public override void Run()
         {
             base.Run();
@@ -41,8 +42,7 @@ namespace Algorithms.Sorting
                 
             }
 
-            Console.Write("Select Sort algorithm =");
-            foreach (int i in cloned_array) Console.Write(i + " ");
+            this.DisplaySortedArray(cloned_array);
         }
     }
 }

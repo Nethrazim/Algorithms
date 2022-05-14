@@ -8,6 +8,11 @@ namespace Algorithms.Sorting
 {
     public class BaseSort
     {
+        public readonly string algorithm_name;
+        public BaseSort(string algo_name) {
+            algorithm_name = algo_name;
+        }
+
         public int[] array = new int[] { 5, 4, 3, 2, 1 };
 
         public virtual void Run()
@@ -15,6 +20,15 @@ namespace Algorithms.Sorting
             Console.WriteLine("Original array = ");
             foreach (int i in array) Console.Write(i + " ");
             Console.WriteLine();
+        }
+
+        public void DisplaySortedArray(int[] arr)
+        {
+            Console.Write(algorithm_name + " = ");
+            foreach (int i in arr)
+            {
+                Console.Write(i + " ");
+            }
         }
     }
 }
