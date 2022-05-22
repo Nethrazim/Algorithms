@@ -12,11 +12,13 @@ namespace Algorithms
         static BubbleSort BubbleSort = new BubbleSort();
         static SelectionSort SelectionSort = new SelectionSort();   
         static InsertionSort InsertionSort = new InsertionSort();
+        static MergeSort MergeSort = new MergeSort();
         static void Main(string[] args)
         {
             //BubbleSort.Run();
             //SelectionSort.Run();
-            InsertionSort.Run();
+            //InsertionSort.Run();
+            MergeSort.Run();
 
 
 
