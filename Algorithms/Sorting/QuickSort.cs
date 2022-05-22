@@ -9,8 +9,7 @@ namespace Algorithms.Sorting
     public class QuickSort : BaseSort
     {
         public QuickSort() : base("Quick Sort") { }
-        //1 4 3 2 5 
-        public int Partition(int[] array, int low, int high)
+        public int Partition(int[] array, int low, int high, bool isLeft)
         {
             int pivot = array[high];
 
@@ -36,13 +35,13 @@ namespace Algorithms.Sorting
             return lowIndex + 1;
         }
 
-        void Sort(int[] array, int low, int high)
+        void Sort(int[] array, int low, int high, bool isLeft)
         {
             if (low < high)
             {
-                int partitionIndex = Partition(array, low, high);
-                Sort(array, low, partitionIndex - 1);
-                Sort(array, partitionIndex + 1, high);
+                int partitionIndex = Partition(array, low, high, isLeft);
+                Sort(array, low, partitionIndex - 1, true);
+                Sort(array, partitionIndex + 1, high, false);
             }
         }
 
@@ -52,7 +51,7 @@ namespace Algorithms.Sorting
 
             int[] clonned_array = (int[])base.array;
 
-            Sort(clonned_array, 0, clonned_array.Length - 1);
+            Sort(clonned_array, 0, clonned_array.Length - 1, false);
 
             this.DisplaySortedArray(clonned_array);
         }    
