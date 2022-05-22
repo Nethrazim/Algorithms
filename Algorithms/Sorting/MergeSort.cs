@@ -10,6 +10,27 @@ namespace Algorithms.Sorting
     {
         
         public MergeSort() : base("Merge Sort") { }
+        public void SortArrayWithIndexes(int[] array, int left, int right)
+        {
+            if (right - left == 0)
+            {
+                Console.WriteLine(array[left]);
+                return;
+            }
+
+
+            for (int i = left; i <= right; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
+            Console.WriteLine();
+
+            int middle = left + (right - left) / 2;
+
+            SortArrayWithIndexes(array, left, middle);
+            SortArrayWithIndexes(array, middle + 1, right);
+            SortMerge(array, left, middle, right);
+        }
 
         public int[] SortMerge(int[] array, int left, int middle, int right)
         {
@@ -55,26 +76,50 @@ namespace Algorithms.Sorting
             return array;
         }
 
-        public void SortArray(int[] array, int left, int right)
+        public int[] Merge(int[] array)
         {
-            if (right - left == 0)
+            int middle = array.Length / 2;
+            if (middle <= 0) return array;
+
+            int[] left = array.Take(middle).ToArray();
+            int[] right = array.Skip(middle).ToArray();
+            
+            return Sort(Merge(left), Merge(right));
+        }
+
+        public int[] Sort(int[] left, int[] right)
+        {
+            int[] result = new int[left.Length + right.Length];
+            
+            int i = 0;
+            int j = 0;
+            int idx = 0;
+            while (i < left.Length && j < right.Length)
             {
-                Console.WriteLine(array[left]);
-                return;
+                if (left[i] < right[j])
+                {
+                    result[idx] = left[i];
+                    i++;
+                }
+                else
+                {
+                    result[idx] = right[j];
+                    j++;
+                }
+                idx++;
             }
-                
 
-            for (int i = left; i <= right; i++)
+            for (int k = i; k < left.Length; k++)
             {
-                Console.Write(array[i] + " ");
+                result[idx++] = left[k];
             }
-            Console.WriteLine();
 
-            int middle = left + (right - left) / 2;
+            for (int k = j; k < right.Length; k++)
+            {
+                result[idx++] = right[k];
+            }
 
-            SortArray(array, left,  middle);
-            SortArray(array, middle + 1, right);
-            SortMerge(array, left, middle, right);
+            return result;
         }
 
         public void Run()
@@ -84,8 +129,7 @@ namespace Algorithms.Sorting
 
             int[] clonned_array = (int[])array.Clone();
 
-            SortArray(clonned_array, 0, clonned_array.Length - 1);
-            base.DisplaySortedArray(clonned_array);
+            base.DisplaySortedArray(Merge(clonned_array));
         }
     }
 }
