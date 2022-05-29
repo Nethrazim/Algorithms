@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Sorting
 {
+    //O(nlogn)
+    // Heapify is O(Logn)
+    // create and build heap is O(n)
     public class HeapSort : BaseSort
     {
         public HeapSort() : base("Heap Sort") { }
