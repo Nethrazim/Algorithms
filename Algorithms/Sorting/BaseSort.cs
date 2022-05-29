@@ -22,13 +22,16 @@ namespace Algorithms.Sorting
             Console.WriteLine();
         }
 
-        public void DisplaySortedArray(int[] arr)
+        public void DisplaySortedArray(int[] arr, string step = null)
         {
-            Console.Write(algorithm_name + " = ");
+            Console.Write(algorithm_name + " ");
+            if (step != null) Console.Write("Step = " + step);
+            Console.Write(" : ");
             foreach (int i in arr)
             {
                 Console.Write(i + " ");
             }
+            Console.WriteLine();
         }
     }
 }

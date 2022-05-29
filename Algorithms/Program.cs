@@ -14,13 +14,15 @@ namespace Algorithms
         static InsertionSort InsertionSort = new InsertionSort();
         static MergeSort MergeSort = new MergeSort();
         static QuickSort QuickSort = new QuickSort();
+        static HeapSort HeapSort = new HeapSort();
         static void Main(string[] args)
         {
             //BubbleSort.Run();
             //SelectionSort.Run();
             //InsertionSort.Run();
             //MergeSort.Run();
-            QuickSort.Run();
+            //QuickSort.Run();
+            HeapSort.Run();
 
 
 
