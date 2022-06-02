@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Algorithms.Lists.Linked
 {
     public class LinkedList<T>
+        where T: struct
     {
         public Node<T> Head { get; set; }
 
@@ -49,6 +50,23 @@ namespace Algorithms.Lists.Linked
             return current;
         }
 
+        public int FindNodePosition(T searchedValue)
+        {
+            int pos = -1;
+            findPosOfNode(Head, searchedValue, ref pos);
+            return pos;
+        }
+
+        private void findPosOfNode(Node<T> node, T value, ref int pos)
+        {
+            pos++;
+            if (node.Value.Equals(value))
+            {
+                return;
+            }
+                
+            findPosOfNode(node.Next, value, ref pos);
+        }
 
         public void Parse()
         {
@@ -118,6 +136,14 @@ namespace Algorithms.Lists.Linked
             }
                 
             return intersectionPoint;
+        }
+
+        public void RunFindPosOfNode()
+        {
+            LinkedList<int> linkedList1 = new LinkedList<int>();
+            linkedList1.Add(new int[] { 1, 2, 5, 6, 7, 12, 13 });
+
+            Console.WriteLine(linkedList1.FindNodePosition(12));
         }
 
     }

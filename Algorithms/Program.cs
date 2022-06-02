@@ -27,8 +27,9 @@ namespace Algorithms
             //QuickSort.Run();
             //HeapSort.Run();
             //LinkedList.Run();
+            LinkedList.RunFindPosOfNode();
             //LinkedList.FindIntersectionOfLists();
-            DoubleLinkedList.Run();
+            //DoubleLinkedList.Run();
 
 
 
