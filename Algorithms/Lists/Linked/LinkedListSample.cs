@@ -64,6 +64,10 @@ namespace Algorithms.Lists.Linked
                     previousNode.Next = node.Next;
                     deleteNode.Next = null;
                 }
+                else
+                {
+                    Head = node.Next;
+                }
 
             }
             else
@@ -174,7 +178,7 @@ namespace Algorithms.Lists.Linked
             LinkedList<int> linkedList1 = new LinkedList<int>();
             linkedList1.Add(new int[] { 1, 2, 5, 6, 7, 12, 13 });
 
-            linkedList1.DeleteNode(new Node<int>() { Value = 7 });
+            linkedList1.DeleteNode(new Node<int>() { Value = 2  });
             linkedList1.Parse();
         }
 
