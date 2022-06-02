@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Algorithms.Lists.Linked;
 using Algorithms.Sorting;
 namespace Algorithms
 {
@@ -15,6 +15,7 @@ namespace Algorithms
         static MergeSort MergeSort = new MergeSort();
         static QuickSort QuickSort = new QuickSort();
         static HeapSort HeapSort = new HeapSort();
+        static LinkedListSample LinkedList  =new LinkedListSample();    
         static void Main(string[] args)
         {
             //BubbleSort.Run();
@@ -22,7 +23,9 @@ namespace Algorithms
             //InsertionSort.Run();
             //MergeSort.Run();
             //QuickSort.Run();
-            HeapSort.Run();
+            //HeapSort.Run();
+            LinkedList.Run();
+            LinkedList.FindIntersectionOfLists();
 
 
 
