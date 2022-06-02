@@ -50,6 +50,29 @@ namespace Algorithms.Lists.Linked
             return current;
         }
 
+        public void DeleteNode(Node<T> node)
+        {
+            _DeleteNode(node, null, Head);
+        }
+
+        private void _DeleteNode(Node<T> deleteNode, Node<T> previousNode, Node<T> node)
+        {
+            if (node.Value.Equals(deleteNode.Value))
+            {
+                if (previousNode != null)
+                {
+                    previousNode.Next = node.Next;
+                    deleteNode.Next = null;
+                }
+
+            }
+            else
+            {
+                _DeleteNode(deleteNode, node, node.Next);
+            }
+        }
+
+
         public int FindNodePosition(T searchedValue)
         {
             int pos = -1;
@@ -144,6 +167,15 @@ namespace Algorithms.Lists.Linked
             linkedList1.Add(new int[] { 1, 2, 5, 6, 7, 12, 13 });
 
             Console.WriteLine(linkedList1.FindNodePosition(12));
+        }
+
+        public void RunDeleteNode()
+        {
+            LinkedList<int> linkedList1 = new LinkedList<int>();
+            linkedList1.Add(new int[] { 1, 2, 5, 6, 7, 12, 13 });
+
+            linkedList1.DeleteNode(new Node<int>() { Value = 7 });
+            linkedList1.Parse();
         }
 
     }
