@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Algorithms.Lists.Double_Linked;
 using Algorithms.Lists.Linked;
 using Algorithms.Sorting;
 namespace Algorithms
@@ -15,7 +16,8 @@ namespace Algorithms
         static MergeSort MergeSort = new MergeSort();
         static QuickSort QuickSort = new QuickSort();
         static HeapSort HeapSort = new HeapSort();
-        static LinkedListSample LinkedList  =new LinkedListSample();    
+        static LinkedListSample LinkedList  =new LinkedListSample();
+        static DoubleLinkedListSample DoubleLinkedList = new DoubleLinkedListSample();
         static void Main(string[] args)
         {
             //BubbleSort.Run();
@@ -24,8 +26,9 @@ namespace Algorithms
             //MergeSort.Run();
             //QuickSort.Run();
             //HeapSort.Run();
-            LinkedList.Run();
-            LinkedList.FindIntersectionOfLists();
+            //LinkedList.Run();
+            //LinkedList.FindIntersectionOfLists();
+            DoubleLinkedList.Run();
 
 
 
